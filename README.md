@@ -26,14 +26,13 @@ Trip case este singura aplicatia de tip web, dintre cele 3 produse similare, ce 
 
 2. Interfata aplicatie
 * Pagina de login
-![](https://imgur.com/mv4hGXq)
-![Login](https://imgur.com/mv4hGXq)
+![Login](login.PNG)
 * Realizarea unui nou cont
-![Register](https://imgur.com/6urjO9t)
+![Register](register.PNG)
 * Realizarea unui nou plan
-![Create plan](https://imgur.com/ATVih68)
+![Create plan](new_plan.PNG)
 * Vizualizarea planurilor
-![See plan](https://imgur.com/a/SUnsoVu)
+![See plan](home.PNG)
 
 3. API REST
 * GET /user?username={usernameParam}&password={passwordParam}
