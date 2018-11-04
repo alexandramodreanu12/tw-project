@@ -4,14 +4,14 @@
 1. Introducere
 * Problema identificata
 
-	Ne propunem realizarea unei aplicatii de tip web prin care utilizatorii acesteia sa isi poata realiza planuri de calatorie. In multe ocazii se poate intampla ca organizarea unei vacante *sa nu fie prea bine organizata* si acest lucru _cauzeaza neplaceri_.
+	Ne propunem realizarea unei aplicatii de tip web prin care utilizatorii acesteia sa isi poata realiza planuri de calatorie. In multe ocazii se poate intampla ca organizarea unei vacante **sa nu fie prea bine organizata** si acest lucru _cauzeaza neplaceri_.
 	Prin aceasta solutie se poate realiza o structura a calatoriei, dar si un istoric al acestora, cu observatiile de rigoare.
 	Pasii pe care trebuie sa ii urmeaza utilizatorul de la intrarea pe platforma sunt: logarea in contul propriu sau realizarea unui cont nou daca nu detin unul, realizarea unui plan nou de calatorie prin completarea campurilor aferente, adaugarea de locatii, daca nu se afla deja in baza de date si adaugarea de pasi ai calatoriei.
-	Inainte de finalizarea planulul, acesta poate *verifica vremea* in perioada indicata. Dupa realizarea calatoriei, el poate introduce cateva _observatii despre aceasta si o nota_.
+	Inainte de finalizarea planulul, acesta poate **verifica vremea** in perioada indicata. Dupa realizarea calatoriei, el poate introduce cateva _observatii despre aceasta si o nota_.
 * Public tinta
 	
 	Aplicatia se adreseaza persoanelor care sunt pasionate de calatorati, dar si celor care fac acest lucru in interes profesional.
-	Asadar exista doua linii principale de promovare a aplicatiei. Prima dintre ele o reprezinta domeniul *B2C* (business to customer), unde ne adresam persoanelor fizice ce isi doresc o mai buna organizare a calatoriilor. A doua este cea de *B2B* (business to business) unde ne adresam organizatiilor care realizeaza peste 50 de zboruri pe an, astfel putand sa le realizeze itinerariul angajatilor.
+	Asadar exista doua linii principale de promovare a aplicatiei. Prima dintre ele o reprezinta domeniul **B2C** (business to customer), unde ne adresam persoanelor fizice ce isi doresc o mai buna organizare a calatoriilor. A doua este cea de **B2B** (business to business) unde ne adresam organizatiilor care realizeaza peste 50 de zboruri pe an, astfel putand sa le realizeze itinerariul angajatilor.
 * Produse similare
 
 #### TripIt
@@ -37,6 +37,7 @@ Trip case este singura aplicatia de tip web, dintre cele 3 produse similare, ce 
 3. API REST
 * GET /user?username={usernameParam}&password={passwordParam}
 Exemple raspuns:
+```json
 {
 	code: 200,
 	response: {
@@ -54,8 +55,12 @@ id: “1”,
 		errorText: “Wrong e-mail”
 }
 }
+```
 * POST /user
+
 Request Body:
+
+```json
 {
 	username: “AlexandraM”,
 	lastname: “Modreanu”,
@@ -64,19 +69,28 @@ Request Body:
 	e-mail: “alexandra.modreanu@gmail.com”,
 	sex: “F”
 }
+```
 Exemple raspuns:
+
+```json
 {
 	code: 200
 }
+```
+```json
 {
 	code: 500,
 	response: {
 		errorText: “Wrong e-mail”
+	}
 }
-}
+```
 
 * GET /locatii
+
 Exemplu raspuns:
+
+```json
 {
 	code: 200,
 	response: [{
@@ -88,9 +102,12 @@ id: “2”,
 	name: “Machester”
 }]
 }
+```
 
 * GET /planuri?userId={userIdParam}
+
 Exemplu raspuns:
+```json
 {
 	code: 200,
 	response: [{
@@ -131,9 +148,11 @@ observations: null,
 rating: null
 }]
 }
-
+```
 * POST /plan
+
 Request Body:
+```json
 {
 	{
 id: “1”,
@@ -179,26 +198,42 @@ Exemplu raspuns:
 		errorText: “lnvalid date”
 }
 }
+```
+
 * PUT /plan?planId={planIdParam}
+
 Request Body:
+```json
 {
 name: “Plan Anglia 2.0”,
 }
+```
+
 Exemplu raspuns:
+
+```json
 {
 	code: 200
 }
+```
+
 * DELETE /plan?planId={planIdParam}
+
 Exemplu raspuns:
+
+```json
 {
 	code: 200
 }
+```
+```json
 {
 	code: 500,
 	response: {
 		errorText: “Plan with sent id doesn’t exist.”
 }
 }
+```
 
 4. Functionalitati
 - Realizarea de conturi noi cu username, parola si alte date.
