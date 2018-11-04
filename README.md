@@ -3,23 +3,30 @@
 
 1. Introducere
 * Problema identificata
+
 	Ne propunem realizarea unei aplicatii de tip web prin care utilizatorii acesteia sa isi poata realiza planuri de calatorie. In multe ocazii se poate intampla ca organizarea unei vacante *sa nu fie prea bine organizata* si acest lucru _cauzeaza neplaceri_.
 	Prin aceasta solutie se poate realiza o structura a calatoriei, dar si un istoric al acestora, cu observatiile de rigoare.
 	Pasii pe care trebuie sa ii urmeaza utilizatorul de la intrarea pe platforma sunt: logarea in contul propriu sau realizarea unui cont nou daca nu detin unul, realizarea unui plan nou de calatorie prin completarea campurilor aferente, adaugarea de locatii, daca nu se afla deja in baza de date si adaugarea de pasi ai calatoriei.
 	Inainte de finalizarea planulul, acesta poate *verifica vremea* in perioada indicata. Dupa realizarea calatoriei, el poate introduce cateva _observatii despre aceasta si o nota_.
-..* Public tinta
+* Public tinta
+	
 	Aplicatia se adreseaza persoanelor care sunt pasionate de calatorati, dar si celor care fac acest lucru in interes profesional.
 	Asadar exista doua linii principale de promovare a aplicatiei. Prima dintre ele o reprezinta domeniul *B2C* (business to customer), unde ne adresam persoanelor fizice ce isi doresc o mai buna organizare a calatoriilor. A doua este cea de *B2B* (business to business) unde ne adresam organizatiilor care realizeaza peste 50 de zboruri pe an, astfel putand sa le realizeze itinerariul angajatilor.
-..* Produse similare
+* Produse similare
+
 #### TripIt
-	TripIt ofera o varianta gratuita si una cu plata, pentru 49$/an. Aplicatia gratuita dispune ne mai putine functionalitati in timp ce varianta platita are o multime de posibilitati de organizare a unei calatorii.
+
+TripIt ofera o varianta gratuita si una cu plata, pentru 49$/an. Aplicatia gratuita dispune ne mai putine functionalitati in timp ce varianta platita are o multime de posibilitati de organizare a unei calatorii.
 #### World Mate
-	World Mate ofera aproximativ aceleasi lucruri ca si TripIt, avand de asemenea si o varianta cu plata, de data aceasta de doar 9,99$/an. Prin aceasta se pot organiza zborurile, transferurile de la aeroport, partea de check-in de la aeroport si altele.
+
+World Mate ofera aproximativ aceleasi lucruri ca si TripIt, avand de asemenea si o varianta cu plata, de data aceasta de doar 9,99$/an. Prin aceasta se pot organiza zborurile, transferurile de la aeroport, partea de check-in de la aeroport si altele.
 #### Trip Case
-	Trip case este singura aplicatia de tip web, dintre cele 3 produse similare, ce ofera posibilitatea de a realiza un plan de calatorie si de a adouga diversi pasi pentru aceasta. Cateva exemple sunt cina, intalnire de afaceri, transport in comun, zbor.
+
+Trip case este singura aplicatia de tip web, dintre cele 3 produse similare, ce ofera posibilitatea de a realiza un plan de calatorie si de a adouga diversi pasi pentru aceasta. Cateva exemple sunt cina, intalnire de afaceri, transport in comun, zbor.
 
 2. Interfata aplicatie
 * Pagina de login
+![](https://imgur.com/mv4hGXq)
 ![Login](https://imgur.com/mv4hGXq)
 * Realizarea unui nou cont
 ![Register](https://imgur.com/6urjO9t)
