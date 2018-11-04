@@ -39,21 +39,23 @@ Trip case este singura aplicatia de tip web, dintre cele 3 produse similare, ce 
 Exemple raspuns:
 ```json
 {
-	code: 200,
-	response: {
-id: “1”,
-		username: “Alexandra123”,
-		lastname: “Modreanu”,
-		firstname: “Alexandra”,
-		e-mail: “alexandra.modreanu@gmail.com”,
-		sex: “F”
+	"code": 200,
+	"response": {
+		"id": "1",
+		"username": "Alexandra123",
+		"lastname": "Modreanu",
+		"firstname": "Alexandra",
+		"e-mail": "alexandra.modreanu@gmail.com",
+		"sex": "F"
+	}
 }
-}
+```
+```json
 {
-	code: 500,
-	response: {
-		errorText: “Wrong e-mail”
-}
+	"code": 500,
+	"response": {
+		"errorText": "Wrong e-mail"
+	}
 }
 ```
 * POST /user
@@ -62,26 +64,26 @@ Request Body:
 
 ```json
 {
-	username: “AlexandraM”,
-	lastname: “Modreanu”,
-	password: “AlexM”,
-	firstname: “Alexandra”,
-	e-mail: “alexandra.modreanu@gmail.com”,
-	sex: “F”
+	"id": "1",
+	"username": "Alexandra123",
+	"lastname": "Modreanu",
+	"firstname": "Alexandra",
+	"e-mail": "alexandra.modreanu@gmail.com",
+	"sex": "F"
 }
 ```
 Exemple raspuns:
 
 ```json
 {
-	code: 200
+	"code": 200
 }
 ```
 ```json
 {
-	code: 500,
-	response: {
-		errorText: “Wrong e-mail”
+	"code": 500,
+	"response": {
+		"errorText": "Wrong e-mail"
 	}
 }
 ```
@@ -92,15 +94,15 @@ Exemplu raspuns:
 
 ```json
 {
-	code: 200,
-	response: [{
-id: “1”,
-	name: “London”
-},
-{
-id: “2”,
-	name: “Machester”
-}]
+	"code": 200,
+	"response": [{
+		"id": "1",
+		"name": "London"
+	},
+	{
+		"id": "2",
+		"name": "Machester"
+	}]
 }
 ```
 
@@ -109,44 +111,44 @@ id: “2”,
 Exemplu raspuns:
 ```json
 {
-	code: 200,
-	response: [{
-id: “1”,
-idUtilizator: “1”,
-	name: “Plan Anglia”,
-	steps: [
-	{
-		id: “1”,
-		name:”Avion Otopeni”,
-		date: “2018-12-24+06:00”,
-		observations: null
-},
-{
-		id: “2”,
-		name:”Transfer Londra”,
-		date: “2018-12-24+09:00”,
-observations: null
-}
-],
-locations: [
-	{
-		id: “1”,
-		name:”Great Wall”,
-		date: “2018-12-24+12:00”,
-		rating: null,
-observations: null
-},
-{
-		id: “2”,
-		name:”London Eye”,
-		date: “2018-12-24+13:30”,
-rating: null,
-observations: null
-}
-],
-observations: null,
-rating: null
-}]
+	"code": 200,
+	"response": [{
+		"id": "1",
+		"idUtilizator": "1",
+		"name": "Plan Anglia",
+		"steps": [
+		{
+			"id": "1",
+			"name":"Avion Otopeni",
+			"date": "2018-12-24+06:00",
+			"observations": null
+		},
+		{
+			"id": "2",
+			"name":"Transfer Londra",
+			"date": "2018-12-24+09:00",
+			"observations": null
+		}
+		],
+		"locations": [
+		{
+			"id": "1",
+			"name":"Greate wall",
+			"date": "2018-12-24+12:00",
+			"rating": null,
+			"observations": null
+		},
+		{
+			"id": "2",
+			"name":"London Eye",
+			"date": "2018-12-24+13:30",
+			"rating": null,
+			"observations": null
+		}
+		],
+	"observations": null,
+	"rating": null
+	}]
 }
 ```
 * POST /plan
@@ -154,50 +156,37 @@ rating: null
 Request Body:
 ```json
 {
-	{
-id: “1”,
-idUtilizator: “1”,
-	name: “Plan Anglia”,
-	steps: [
-	{
-		id: “1”,
-		name:”Avion Otopeni”,
-		date: “2018-12-24+06:00”
-},
-{
-		id: “2”,
-		name:”Transfer Londra”,
-		date: “2018-12-24+09:00”
-}
-],
-locations: [
-	{
-		id: “1”,
-		name:”Great Wall”,
-		date: “2018-12-24+12:00”,
-		rating: null
-},
-{
-		id: “2”,
-		name:”London Eye”,
-		date: “2018-12-24+13:30”,
-rating: null
-}
-],
-observations: null,
-rating: null
-}
-}
-Exemplu raspuns:
-{
-	code: 200
-}
-{
-	code: 500,
-	response: {
-		errorText: “lnvalid date”
-}
-}
+		"idUtilizator": "1",
+		"name": "Plan Anglia",
+		"steps": [
+		{
+			"name":"Avion Otopeni",
+			"date": "2018-12-24+06:00",
+			"observations": null
+		},
+		{
+			"name":"Transfer Londra",
+			"date": "2018-12-24+09:00",
+			"observations": null
+		}
+		],
+		"locations": [
+		{
+			"name":"Greate wall",
+			"date": "2018-12-24+12:00",
+			"rating": null,
+			"observations": null
+		},
+		{
+			"name":"London Eye",
+			"date": "2018-12-24+13:30",
+			"rating": null,
+			"observations": null
+		}
+		],
+	"observations": null,
+	"rating": null
+	}
 ```
 
 * PUT /plan?planId={planIdParam}
@@ -205,7 +194,7 @@ Exemplu raspuns:
 Request Body:
 ```json
 {
-name: “Plan Anglia 2.0”,
+	"name": "Plan Anglia 2.0",
 }
 ```
 
@@ -213,7 +202,7 @@ Exemplu raspuns:
 
 ```json
 {
-	code: 200
+	"code": 200
 }
 ```
 
@@ -223,15 +212,15 @@ Exemplu raspuns:
 
 ```json
 {
-	code: 200
+	"code": 200
 }
 ```
 ```json
 {
-	code: 500,
-	response: {
-		errorText: “Plan with sent id doesn’t exist.”
-}
+	"code": 500,
+	"response": {
+		"errorText": "Plan with sent id doesn’t exist."
+	}
 }
 ```
 
