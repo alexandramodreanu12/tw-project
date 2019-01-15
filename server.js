@@ -5,11 +5,21 @@ const express = require('express'),
 
 app.use(bodyParser.json());
 
-const sequelize = new Sequelize('proiect-tw', 'root', 'root', {
+const sequelize = new Sequelize('proiecttw', 'root', '', {
     dialect: 'mysql',
     define: {
         timestamps: false
     }
+});
+
+app.use(function (req, res, next) {
+
+    res.setHeader('Access-Control-Allow-Origin', 'https://proiect-final-alexandramdr.c9users.io');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    next();
 });
 
 app.get('/create', async (req, res) => {
@@ -155,7 +165,7 @@ Plan.hasMany(Step);
 Plan.hasMany(LocationStep);
 User.hasMany(Plan);
 
-app.listen(8080);
+app.listen(8081);
 
 app.get('/user', async (req, res) => {
     try {
@@ -325,11 +335,28 @@ app.post('/plans/:id/location_steps', async (req, res) => {
     }
 })
 
-app.delete('/plans/:id', async (req, res) => {
+app.delete('/steps/:id', async (req, res) => {
     try {
-        let plan = await Plan.findById(req.params.id)
-        if (plan) {
-            await plan.destroy()
+        let step = await Step.findById(req.params.id)
+        if (step) {
+            await step.destroy()
+            res.status(202).json({ message: 'accepted' })
+        }
+        else {
+            res.status(404).json({ message: 'not found' })
+        }
+    }
+    catch (e) {
+        console.warn(e)
+        res.status(500).json({ message: 'server error' })
+    }
+})
+
+app.delete('/location_steps/:id', async (req, res) => {
+    try {
+        let location_step = await LocationStep.findById(req.params.id)
+        if (location_step) {
+            await location_step.destroy()
             res.status(202).json({ message: 'accepted' })
         }
         else {

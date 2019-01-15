@@ -1,26 +1,17 @@
 {
-  "name": "tw-project",
+  "name": "proiect_tw",
   "version": "1.0.0",
-  "description": "1. Introducere\r * Problema identificata",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexandramodreanu12/tw-project.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexandramodreanu12/tw-project/issues"
-  },
-  "homepage": "https://github.com/alexandramodreanu12/tw-project#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "sequelize": "^4.41.2"
   }
